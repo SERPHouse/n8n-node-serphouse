@@ -12,7 +12,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Prerequisites
 
-You need a SERPHouse account and API key. You can sign up at [serphouse.com](https://serphouse.com/).
+You need a SERPHouse account and API key. You can sign up at [serphouse.com](https://serphouse.com/register).
 
 ## Operations
 
@@ -123,26 +123,11 @@ To use this node, you need to configure your SERPHouse API credentials:
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](https://github.com/SERPHouse/n8n-node-serphouse/blob/master/LICENSE.md)
 
 ## Support
 
 For issues or questions:
 
 - Contact SERPHouse support at [serphouse.com/contact-us](https://www.serphouse.com/contact-us)
-
-## Resources
-
-- **[n8n Node Documentation](https://docs.n8n.io/integrations/creating-nodes/)** - Complete guide to building nodes
-- **[n8n Community Forum](https://community.n8n.io/)** - Get help and share your nodes
-- **[@n8n/node-cli Documentation](https://www.npmjs.com/package/@n8n/node-cli)** - CLI tool reference
-- **[n8n Creator Portal](https://creators.n8n.io/nodes)** - Submit your node for verification
-- **[Submit Community Nodes Guide](https://docs.n8n.io/integrations/creating-nodes/deploy/submit-community-nodes/)** - Verification requirements and process
-
-## Contributing
-
-Have suggestions for improving this starter? [Open an issue](https://github.com/n8n-io/n8n-nodes-starter/issues) or submit a pull request!
-
-## License
-
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+- You contact send your suggestions to [serphouse](accounts@serphouse.com)
