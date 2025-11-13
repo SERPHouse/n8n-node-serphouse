@@ -1,6 +1,6 @@
 {
 	"name": "@serphouse/n8n-nodes-serphouse",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Official n8n node for Serphouse",
 	"license": "MIT",
 	"homepage": "https://www.serphouse.com",
