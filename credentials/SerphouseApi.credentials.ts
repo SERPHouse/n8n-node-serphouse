@@ -8,7 +8,7 @@ import {
 
 export class SerphouseApi implements ICredentialType {
 	name = 'serphouseApi';
-	displayName = 'SERPHouse Api API';
+	displayName = 'SERPHouse API';
 	documentationUrl = 'https://docs.serphouse.com/';
 	icon: Icon = 'file:serphouse.svg';
 	properties: INodeProperties[] = [

@@ -1,6 +1,6 @@
 {
 	"name": "@serphouse/n8n-nodes-serphouse",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Official n8n node for Serphouse",
 	"license": "MIT",
 	"homepage": "https://www.serphouse.com",
@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/SERPHouse/n8n-node-serphouse"
+		"url": "https://github.com/SERPHouse/n8n-node-serphouse.git"
 	},
 	"scripts": {
 		"build": "tsc && gulp build:icons",

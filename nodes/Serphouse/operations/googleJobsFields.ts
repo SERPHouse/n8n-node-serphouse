@@ -21,7 +21,7 @@ export const googleJobsFields: INodeProperties[] = [
 			},
 		},
 	},
-	// // Google domain and language fields
+	// Google domain and language fields
 	{
 		...googleDomainList,
 		required: true,
