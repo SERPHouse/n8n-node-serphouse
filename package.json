@@ -5,7 +5,10 @@
 	"license": "MIT",
 	"homepage": "https://www.serphouse.com",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"n8n",
+		"n8n-node",
+		"serphouse"
 	],
 	"author": {
 		"name": "SERPHouse",
