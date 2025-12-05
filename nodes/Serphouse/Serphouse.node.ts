@@ -1,13 +1,14 @@
 import {
-	IHttpRequestOptions,
 	ILoadOptionsFunctions,
 	INodeListSearchResult,
 	INodeType,
 	INodeTypeDescription,
+	NodeConnectionTypes,
 } from 'n8n-workflow';
 import { serpLiveSearchPostFields } from './operations/serpLivePostFields';
 import { gooleSeropTopHundredFields } from './operations/googleSerpTopHundredFields';
 import { googleJobsFields } from './operations/googleJobsFields';
+import { getLocations } from './shared/getLocations';
 
 export class Serphouse implements INodeType {
 	description: INodeTypeDescription = {
@@ -22,8 +23,8 @@ export class Serphouse implements INodeType {
 		defaults: {
 			name: 'SERPHouse',
 		},
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'serphouseApi',
@@ -39,12 +40,30 @@ export class Serphouse implements INodeType {
 		},
 		properties: [
 			{
+				displayName: 'Resource',
+				name: 'resource',
+				type: 'options',
+				noDataExpression: true,
+				options: [
+					{
+						name: 'Search',
+						value: 'search',
+					},
+				],
+				default: 'search',
+			},
+			{
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
 				required: true,
 				noDataExpression: true,
 				default: 'serpLiveSearchPost',
+				displayOptions: {
+					show: {
+						resource: ['search'],
+					},
+				},
 				options: [
 					{
 						name: 'Serp Live Search (POST)',
@@ -94,35 +113,9 @@ export class Serphouse implements INodeType {
 			): Promise<INodeListSearchResult> {
 				const engine = this.getNodeParameter('engine', 0) as string;
 
-				const credentials = await this.getCredentials('serphouseApi');
-				const apiKey = credentials.apiKey as string;
+				const response = await getLocations.call(this, engine, query);
 
-				if (!query || query.trim() === '') {
-					return { results: [] };
-				}
-
-				const options: IHttpRequestOptions = {
-					method: 'GET',
-					url: 'https://api.serphouse.com/location/search',
-					headers: {
-						Authorization: `Bearer ${apiKey}`,
-					},
-					qs: {
-						q: query,
-						type: engine === 'bing' ? 'bing' : 'google',
-					},
-					json: true,
-				};
-
-				const response = await this.helpers.httpRequest(options);
-
-				return {
-					results:
-						response.results?.map((location: any) => ({
-							name: location.loc || 'Unknown',
-							value: location.loc,
-						})) || [],
-				};
+				return response;
 			},
 		},
 	};
